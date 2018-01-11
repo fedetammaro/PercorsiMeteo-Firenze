@@ -1,0 +1,418 @@
+html, body {
+    overflow-y: auto;
+}
+
+#body {
+    background: url(../images/background/2000-25-120.png) no-repeat;
+    background-size: cover; 
+}
+
+.page_container {
+    height: 90%;
+}
+
+#map_header {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 25px;
+    margin: 5%;
+}
+
+#map_header .top_btn {
+    display: inline-block;
+    margin: auto 0;
+    font-size: 3vw;
+    color: dodgerblue;
+}
+
+#map_header .top_btn:hover {
+    color: lightblue;
+}
+
+#map_header h2 {
+    display: inline-block;
+    margin: auto;
+    font-size: 4vw;
+}
+
+#map_container {
+    padding: 2%;
+    height: 60%;
+}
+
+#map_container #map {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    display: flex;
+}
+
+#weather_container {
+    display: none;
+    justify-content: center;
+    color: white;
+    font-size: 2vw;
+}
+
+#empty_result {
+    font-size: 3vw;
+    margin: auto;
+}
+
+#refresh_div {
+    justify-content: center;
+    padding-bottom: 5%;
+    display: none;
+    color: white;
+}
+
+#refresh_div .btn {
+    background-color: green;
+    font-size: 2vw;
+    margin: 2%;
+}
+
+#refresh_div span {
+    margin: auto 0;
+    font-size: 3vw;
+}
+
+#selected_pois {
+    padding: 0 0 0 2%;
+    border: 1px solid;
+    border-radius: 25px;
+    margin: 0 2%;
+    height: 25%;
+}
+
+#pois_ul {
+    height: 100%;
+    font-size: 2vw;
+    padding: 0;
+}
+
+.overflow {
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.overflow::-webkit-scrollbar {
+    display: none;
+}
+
+#pois_ul li {
+    list-style-type: none;
+}
+
+.tag {
+    align-self: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 4%;
+}
+
+.single_poi {
+    width: 100%;
+    display: flex;
+}
+
+.poi_name {
+    width: 95%;
+    margin: auto;
+}
+
+.tag {
+    align-self: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 2%;
+}
+
+.plus_tag {
+    color: forestgreen;
+}
+
+.minus_tag {
+    color: red;
+}
+
+.map_tag {
+    margin: auto;
+    padding: 2%;
+}
+
+.info_tag {
+    color: black;
+}
+
+.popup-image {
+    max-width: 100%;
+}
+
+.toggle_div {
+    display: flex;
+    padding: 5% 0;
+    justify-content: center;
+}
+
+.toggle_span {
+    display: inline-block;
+    margin-right: 5%;
+    vertical-align: middle;
+    width: 50%;
+    color: white;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+    vertical-align: middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display:none;
+}
+
+/* Toggle slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(210%);
+    -ms-transform: translateX(210%);
+    transform: translateX(210%);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    background-color: white;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+    background-color: dimgrey;
+}
+
+/* Smartphone Potrait */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    #weather_container {
+        font-size: 5vw;
+    }
+
+    #map_header .top_btn {
+        font-size: 5vw;
+    }
+
+    #map_header h2 {
+        font-size: 6vw;
+    }
+
+    #map_container {
+        padding: 2% 2% 5% 2%;
+    }
+
+    #empty_result {
+        font-size: 8vw;
+    }
+
+    #refresh_div .btn {
+        font-size: 4vw;
+    }
+
+    #refresh_div span {
+        font-size: 5vw;
+    }
+
+    #selected_pois {
+        padding: 2% 5% 0 5%;
+    }
+
+    #selected_pois::-webkit-scrollbar {
+        width: 5%;
+    }
+
+    #pois_ul {
+        font-size: 5vw;
+    }
+}
+
+/* Smartphone Landscape */
+@media only screen
+and (min-device-width : 480px)
+and (max-device-width : 736px) {
+
+    #weather_container {
+        font-size: 4vw;
+    }
+
+    #pois_ul {
+        font-size: 3vw;
+    }
+
+     #map_header {
+        height: 15%;
+    }
+
+    #map_header h2 {
+        font-size: 5vw;
+    }
+}
+
+/* iPad Potrait */
+@media only screen
+and (device-width: 768px)
+and (device-height: 1024px) {
+
+    #weather_container {
+        font-size: 4vw;
+    }
+
+    #map_header .top_btn {
+        font-size: 4vw;
+    }
+
+    #map_header h2 {
+        margin: auto auto auto 15%;
+    }
+
+    #pois_ul {
+        font-size: 4vw;
+    }
+
+    .toggle_div {
+        font-size: 3.5vw;
+    }
+}
+
+/* iPad Pro Protait */
+@media only screen
+and (device-width : 1024px)
+and (device-height : 1366px) {
+
+    #weather_container {
+        font-size: 4vw;
+    }
+
+    #map_header .top_btn {
+        font-size: 4vw;
+    }
+
+    #map_header h2 {
+        margin: auto auto auto 15%;
+    }
+
+    #pois_ul {
+        font-size: 4vw;
+    }
+
+    .toggle_div {
+        font-size: 4vw;
+    }
+}
+
+/* iPad Landscape */
+@media only screen
+and (device-width: 1024px)
+and (device-height: 768px){
+
+    #weather_container {
+        font-size: 4vw;
+    }
+
+    #pois_ul {
+        font-size: 3vw;
+    }
+
+    .toggle_div {
+        font-size: 2.5vw;
+    }
+
+    .toggle_span {
+        width: 40%;
+    }
+}
+
+/* iPad Pro Landscape */
+@media only screen
+and (device-width : 1366px)
+and (device-height : 1024px) {
+
+    #weather_container {
+        font-size: 4vw;
+    }
+    
+    #pois_ul {
+        font-size: 3vw;
+    }
+
+    .toggle_div {
+        font-size: 3vw;
+    }
+}
+
+
+/* Desktop */
+
+@media only screen
+and (min-width:1025px) {
+    
+    #map_header {
+        height: 15%;
+    }
+
+    #map_header .top_btn {
+        font-size: 2vw;
+    }
+
+    #pois_ul {
+        font-size: 3vw;
+    }
+
+    .toggle_div {
+        font-size: 2vw;
+    }
+
+    .toggle_span {
+        width: 25%;
+    }
+}

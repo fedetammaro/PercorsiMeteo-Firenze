@@ -1,0 +1,180 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+html, body {
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+#body {
+    width: 100%;
+    height: 100%;
+    background: url(../images/background/index-2000-25-120.png);
+    color: white;
+
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+
+    animation: animatedBackground 30s linear infinite;
+}
+
+#title {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+#title h1 {
+    margin: auto;
+    font-size: 4vw;
+    text-align: center;
+    font-family: 'Baloo Chettan', cursive;
+}
+
+#login_container {
+    height: 50%;
+    display: grid;
+}
+
+#login_container_body {
+    margin: auto;
+}
+
+#please_login {
+    display: block;
+    text-align: center;
+}
+
+#please_login h3 {
+    font-size: 2vw;
+}
+
+#login_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#login_container .btn_login {
+    font-size: 2vw;
+    margin: 3% 5% 3% 0;
+    background-color: #3b55a0;
+    background-image: linear-gradient(#4c69ba, #3b55a0);
+}
+
+#login_container .btn_login:hover,
+#login_container .btn_login:focus {
+    background-color: #5b7bd5;
+    background-image: linear-gradient(#5b7bd5, #4864b1);
+}
+
+#login_container #fb_logo_div {
+    display: inline-block;
+    height: 100%;
+    border-right: 1px solid #364e92;
+}
+
+#login_container #fb_brand_div {
+    display: inline-block;
+    height: 100%;
+}
+
+/* Smartphone Potrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+    #body {
+        background-size: cover;
+    }
+
+    #title h1 {
+        font-size: 10vw;
+    }
+
+    #please_login h3 {
+        font-size: 6vw;
+    }
+
+    #login_container .btn_login {
+        font-size: 6vw;
+    }
+}
+
+/* iPad Potrait */
+@media only screen
+and (device-width: 768px)
+and (device-height: 1024px) {
+    #title h1 {
+        font-size: 7vw;
+    }
+
+    #please_login h3 {
+        font-size: 4vw;
+    }
+
+    #login_container .btn_login {
+        font-size: 4vw;
+    }
+}
+
+/* iPad Pro Protait */
+@media only screen
+and (device-width : 1024px)
+and (device-height : 1366px) {
+    #title h1 {
+        font-size: 7vw;
+    }
+
+    #please_login h3 {
+        font-size: 4vw;
+    }
+
+    #login_container .btn_login {
+        font-size: 4vw;
+    }
+}
+
+/* iPad Landscape */
+@media only screen
+and (device-width: 1024px)
+and (device-height: 768px){
+    #title h1 {
+        font-size: 6vw;
+    }
+
+    #please_login h3 {
+        font-size: 3vw;
+    }
+
+    #login_container .btn_login {
+        font-size: 3vw;
+    }
+}
+
+/* iPad Pro Landscape */
+@media only screen
+and (device-width : 1366px)
+and (device-height : 1024px) {
+    #title h1 {
+        font-size: 6vw;
+    }
+
+    #please_login h3 {
+        font-size: 3vw;
+    }
+
+    #login_container .btn_login {
+        font-size: 3vw;
+    }
+}

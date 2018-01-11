@@ -1,0 +1,151 @@
+html, body {
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#body {
+    background: url(../images/background/2000-25-120.png) no-repeat;
+    background-size: cover; 
+}
+
+#hiw {
+    padding: 0 4% 4% 4%;
+    border-radius: 25px;
+    margin: 5%;
+    opacity: 0.7;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
+
+#hiw_title {
+    flex: none;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2%;
+    height: 40%;
+    display: inline-flex;
+}
+
+#back_btn_div {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+#back_btn_div .btn {
+    font-size: 3vw;
+    padding: 0;
+}
+
+#back_btn_div .btn:hover {
+    color: lightblue;
+}
+
+.back_btn {
+    display: inline-block;
+    margin-left: 4%;
+    color: dodgerblue;
+    text-align: left;
+}
+
+.back_btn:hover {
+    color: lightblue;
+}
+
+#hiw_title h2 {
+    font-size: 4vw;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    margin-left: 5%;
+
+}
+
+#hiw_body {
+    flex: auto;
+    overflow-y: auto;
+}
+
+#hiw_body::-webkit-scrollbar {
+    display: none;
+}
+
+.info {
+    color: black;
+}
+
+.warning {
+    color: yellow;
+}
+
+.comment {
+    color: black;
+}
+
+.question {
+	color:black;
+}
+
+/* Smartphone Potrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+    #hiw_title {
+        height: 15%;
+    }
+
+    #back_btn_div .btn{
+        font-size: 6vw;
+    }
+
+    #hiw_title h2 {
+        font-size: 8vw;
+    }
+}
+
+/* iPad Potrait */
+@media only screen
+and (device-width: 768px)
+and (device-height: 1024px) {
+    
+    #hiw_title {
+        height: 20%;
+    }
+}
+
+/* iPad Pro Protait */
+@media only screen
+and (device-width : 1024px)
+and (device-height : 1366px) {
+    
+    #hiw_title {
+        height: 20%;
+    }
+}
+
+/* iPad Landscape */
+@media only screen
+and (device-width: 1024px)
+and (device-height: 768px){
+    
+    #hiw_title {
+        height: 20%;
+    }
+}
+
+/* iPad Pro Landscape */
+@media only screen
+and (device-width : 1366px)
+and (device-height : 1024px) {
+    
+    #hiw_title {
+        height: 20%;
+    }
+}

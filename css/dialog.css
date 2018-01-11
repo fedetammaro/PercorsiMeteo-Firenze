@@ -1,0 +1,38 @@
+.ui-dialog {
+    z-index: 3001;
+}
+
+.ui-dialog .ui-dialog-title {
+    width: 100%;
+}
+
+.ui-dialog-content, .ui-dialog-titlebar {
+    text-align: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+	color: white;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .confirm {
+	background-color: green;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .cancel {
+	background-color: red;
+}
+
+.custom-overlay {
+    background-color: black;
+    background-image: none;
+    opacity: 0.7;
+    z-index: 3000;
+}

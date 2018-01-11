@@ -1,0 +1,792 @@
+html, body {
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#body {
+    background: url(../images/background/2000-25-120.png) no-repeat;
+    background-size: cover;
+}
+
+#page_container {
+    padding: 0 2% 0 2%;
+}
+
+#page_container h3 {
+    text-align: center;
+    font-size: 4vw;
+    color: white;
+}
+
+#form_container {
+    padding: 5% 0 0 0;
+    width: 100%;
+}
+
+#form_container form {
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#position_input {
+    width: 75%;
+    height: 100%;
+    font-size: 4vw;
+    border-radius: 5px;
+    border: 0;
+}
+
+#search_submit {
+    margin-left: 2%;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 100%;
+}
+
+#poi_container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: 1px solid black;
+    border-radius: 25px;
+    height: 300px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+#poi_container #poi_header {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background-color: lightgrey;
+    justify-content: center;
+}
+
+#poi_container #poi_header #weather_icon_div {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    font-size: 3vw;
+}
+
+#poi_container #poi_header #title {
+    width: 60%;
+    height: 100%;
+}
+
+#poi_container #poi_header #title h2 {
+    font-size: 3vw;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+}
+
+#poi_container #poi_div {
+    height: 80%;
+    overflow-y: scroll;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 3.5vw;
+}
+
+#poi_container #poi_div ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+#poi_container #poi_div li {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#poi_div::-webkit-scrollbar {
+    width: 10px;
+}
+
+#poi_div::-webkit-scrollbar-track {
+    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#poi_div::-webkit-scrollbar-thumb {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background: lightgrey;
+}
+
+#poi_container #poi_div .single_poi {
+    width: 100%;
+    display: flex;
+}
+
+#poi_container #poi_div .tag {
+    align-self: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 2%;
+}
+
+#poi_container #poi_div .handle {
+    align-self: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 2%;
+}
+
+#poi_container #poi_div .handle:hover {
+    cursor: move;
+}
+
+#poi_container #poi_div .plus_tag {
+    color: forestgreen;
+}
+
+#poi_container #poi_div .minus_tag {
+    color: red;
+}
+
+#poi_container #poi_div .poi_name {
+    width: 90%;
+}
+
+#poi_container #poi_div .info_tag {
+    align-self: center;
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    margin-top: 1%;
+}
+
+#poi_container #poi_div .info_tag:hover {
+    color: darkgrey;
+}
+
+#poi_container #poi_div .alert_tag {
+    color: #ffc700;
+    margin-left: 1%;
+}
+
+#poi_container #poi_div #points_alert {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#poi_container #poi_div #points_alert p {
+    margin: auto;
+    font-size: 5vw;
+}
+
+#option_container {
+    width: 100%;
+    display: flex;
+}
+
+.elements_container {
+    padding-top: 5%;
+    width: 50%;
+    display: block;
+    text-align: center;
+}
+
+.elements_container:nth-child(2) {
+    margin: auto;
+}
+
+.elements_container .search_nearby_btn {
+    padding: 2% 7%;
+    background: green;
+    color: white;
+}
+
+.elements_container .search_nearby_btn:active {
+    background: darkgreen;
+}
+
+.toggle_div {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.element_span {
+    display: inline-flex;
+    margin: auto 0;
+    justify-content: center;
+    width: 70%;
+    color: white;
+    font-size: 3vw;
+}
+
+
+.toggle_switch {
+    margin: auto 0;
+}
+
+/* Toggle Switch */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display:none;
+}
+
+/* Toggle slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(160%);
+    -ms-transform: translateX(160%);
+    transform: translateX(160%);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    background-color: white;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+    background-color: dimgrey;
+}
+
+#radio_buttons_form {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    color: white;
+}
+
+#radio_buttons_form h1 {
+    width: 15%;
+    display: inline-block;
+    margin: auto 0;
+    font-size: 3vw;
+}
+
+#radio_buttons_form div {
+    display: inline-block;
+    margin: auto 0;
+    font-size: 2vw;
+    margin-left: 2%;
+    color: white;
+}
+
+input[type=radio] {
+    height: 15px;
+    width: 15px;
+}
+
+#go_button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+}
+
+#go_button_container #go_button {
+    background-color: green;
+    border-radius: 25px;
+    width: 100%;
+}
+
+#go_button_container .btn {
+    padding: 0;
+    font-size: 2vw;
+    line-height: 2;
+}
+
+#go_button_container #go_button:hover {
+    background-color: darkgreen;
+}
+
+#overlay-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    z-index: 1005;
+    display: none;
+    right: 0;
+    bottom: 0;
+}
+
+#overlay {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 90%;
+    height: 55%;
+    z-index: 1010;
+    display: none;
+    margin: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border: 2px solid darkslategrey;
+    border-radius: 25px;
+    overflow: scroll;
+}
+
+#about_title {
+    display: flex;
+    justify-content: center;
+}
+
+#about_title h2 {
+    display: inline-block;
+    margin: 2%;
+}
+
+#about_title i {
+    display: inline-block;
+    font-size: 4vw;
+    margin: auto 0;
+}
+
+.about_div p {
+    margin: 2%;
+}
+
+.about_div a {
+    color: dodgerblue;
+}
+
+#overlay .about_cross {
+    position: absolute;
+    right: 7%;
+}
+
+/* Range slider style */
+#slidecontainer {
+    width: 100%;
+    margin: 5% 0;
+    text-align: center;
+    color: white;
+}
+
+#slidecontainer h3 {
+    margin-bottom: 5%;
+    font-size: 3vw;
+}
+
+#slidecontainer p {
+    margin: 0 0 5%;
+}
+
+input[type="range"] {
+    width: 80%;
+}
+
+#my_range {
+    -webkit-appearance: none;
+    height: 10px;
+    background: lightgrey;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#my_range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#my_range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+/* Smartphone Potrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+    header {
+        height: 10%;
+    }
+
+    #page_container h3 {
+        font-size: 6vw;
+    }
+
+    #form_container form {
+        height: 30px;
+        text-align: left;
+    }
+
+    #poi_container #poi_header #weather_icon_div {
+        font-size: 5vw;
+    }
+
+    #poi_container #poi_header #title h2 {
+        font-size: 5vw;
+    }
+
+    #go_button_container .btn {
+        font-size: 3vw;
+    }
+
+    #poi_container #poi_div {
+        font-size: 4vw;
+    }
+
+    #radio_buttons_form h1 {
+        font-size: 5vw;
+        width: 20%;
+    }
+
+    #radio_buttons_form div {
+        font-size: 4vw;
+    }
+
+    input[type=radio] {
+        vertical-align: middle;
+        margin: auto;
+    }
+
+    #overlay .about_cross {
+        right: 5%;
+    }
+
+    #about_title i {
+        font-size: 8vw;
+    }
+}
+
+/* Smartphone Landscape */
+@media only screen
+and (min-device-width : 480px)
+and (max-device-width : 736px) {
+    #position_input {
+        font-size: 3vw;
+    }
+
+    #poi_container #poi_header {
+        height: 20%;
+    }
+
+    #radio_buttons_form h1 {
+        width: 25%;
+        font-size: 5vw;
+    }
+
+    #radio_buttons_form div {
+        font-size: 4vw;
+    }
+
+    #go_button_container #go_button {
+        width: 100%;
+    }
+}
+
+/* iPad Potrait */
+@media only screen
+and (device-width: 768px)
+and (device-height: 1024px) {
+
+    #page_container h3 {
+        font-size: 5vw;
+    }
+
+    #position_input {
+        font-size: 3vw;
+    }
+
+    #search_submit {
+        width: 100px;
+        font-size: 2vw;
+    }
+
+    #radio_buttons_form h1 {
+        font-size: 4vw;
+        width: 25%;
+    }
+
+    #radio_buttons_form div {
+        font-size: 3vw;
+    }
+
+    input[type=radio] {
+        width: 20px;
+        height: 20px;
+    }
+
+    #poi_container {
+        width: 100%;
+    }
+
+    #poi_container #poi_header {
+        height: 20%;
+    }
+
+    #poi_container #poi_header #weather_icon_div {
+        font-size: 4.5vw;
+    }
+
+    #poi_container #poi_header #title h2 {
+        margin: 0;
+        font-size: 4.5vw;
+    }
+
+    .toggle_div {
+        font-size: 3.5vw;
+    }
+
+    .element_span {
+        font-size: 2.5vw;
+    }
+}
+
+/* iPad Pro Protait */
+@media only screen
+and (device-width : 1024px)
+and (device-height : 1366px) {
+    /*TODO: levare header*/
+    header {
+        height: 10%;
+    }
+
+    #poi_container {
+        width: 100%;
+        height: 500px;
+    }
+
+    #position_input {
+        font-size: 3vw;
+    }
+
+    #radio_buttons_form h1 {
+        font-size: 4vw;
+        width: 20%;
+    }
+
+    #radio_buttons_form div {
+        font-size: 4vw;
+    }
+
+    input[type=radio] {
+        width: 30px;
+        height: 30px;
+    }
+
+    #poi_container #poi_header {
+        height: 20%;
+    }
+
+    #poi_container #poi_header #weather_icon_div {
+        font-size: 4vw;
+    }
+
+    #poi_container #poi_header #title h2 {
+        font-size: 4vw;
+    }
+
+    .toggle_div {
+        font-size: 4vw;
+    }
+
+    .element_span {
+        font-size: 2.5vw
+    }
+}
+
+/* iPad Landscape */
+@media only screen
+and (device-width: 1024px)
+and (device-height: 768px){
+
+    #radio_buttons_form h1 {
+        width: 20%;
+        font-size: 4vw;
+    }
+
+    .toggle_div {
+        font-size: 2.5vw;
+    }
+
+    #poi_container #poi_header {
+        height: 20%;
+    }
+
+    #poi_container #poi_header #weather_icon_div {
+        font-size: 4vw;
+    }
+
+    #poi_container #poi_header #title h2 {
+        font-size: 4vw;
+    }
+
+    .element_span {
+        font-size: 2.5vw;
+    }
+}
+
+/* iPad Pro Landscape */
+@media only screen
+and (device-width : 1366px)
+and (device-height : 1024px) {
+
+    #poi_container {
+        width: 100%;
+        height: 750px;
+    }
+
+    #poi_container #poi_header {
+        padding-top: 0;
+    }
+
+    #position_input {
+        height: 60px;
+        font-size: 3vw;
+    }
+
+    #search_submit {
+        height: 60px;
+        width: 100px;
+        vertical-align: bottom;
+        font-size: 2vw;
+    }
+
+    #radio_buttons_form h1 {
+        font-size: 4vw;
+        width: 20%;
+    }
+
+    #radio_buttons_form div {
+        font-size: 3vw;
+    }
+
+    input[type=radio] {
+        width: 30px;
+        height: 30px;
+    }
+
+    #poi_container #poi_header {
+        height: 20%;
+    }
+
+    #poi_container #poi_header #weather_icon_div {
+        font-size: 3.5vw;
+    }
+
+    #poi_container #poi_header #title h2 {
+        font-size: 3.5vw;
+    }
+
+    .toggle_div {
+        font-size: 3vw;
+    }
+
+    .element_span {
+        font-size: 2.5vw;
+    }
+}
+
+
+/* Desktop */
+@media only screen
+and (min-width:1025px) {
+
+    #position_input {
+        font-size: 2vw;
+    }
+
+    #radio_buttons_form h1 {
+        font-size: 3vw;
+        width: 15%;
+    }
+
+    #radio_buttons_form div {
+        margin-left: 0;
+    }
+
+    input[type=radio] {
+        height: 30px;
+        width: 30px;
+    }
+
+    #poi_container {
+        height: 500px;
+    }
+
+    .toggle_div {
+        font-size: 2vw;
+    }
+
+    .element_span {
+        font-size: 2vw;
+    }
+
+    #go_button_container #go_button {
+        width: 200px;
+    }
+}
